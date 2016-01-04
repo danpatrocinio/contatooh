@@ -28,16 +28,14 @@ module.exports = function() {
 	
 	var controller = {};
 	
-	controller.salvaContato = function(req, res) {
-
-		var contato = req.body;
-		contato = contato._id ? 	atualiza(contato) :		adiciona(contato);
-
-		res.json(contato);
-	};
-	
 	controller.listaTodos = function(req, res) {
 		res.json(_contatos);
+	};
+	
+	controller.salvaContato = function(req, res) {
+		var contato = req.body;
+		contato = contato._id ? 	atualiza(contato) :		adiciona(contato);
+		res.json(contato);
 	};
 
 	controller.obtemContato = function(req, res) {
@@ -50,11 +48,9 @@ module.exports = function() {
 
 	controller.removeContato = function(req, res) {
 		var idContato = req.params.id;
-
 		_contatos = _contatos.filter(function(contato) {
 			return contato._id != idContato;
 		});
-
 		res.sendStatus(204).end();
 	};
 
