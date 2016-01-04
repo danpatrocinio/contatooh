@@ -29,7 +29,6 @@ module.exports = function() {
 	var controller = {};
 	
 	controller.salvaContato = function(req, res) {
-		console.log('Salvando contato.');
 
 		var contato = req.body;
 		contato = contato._id ? 	atualiza(contato) :		adiciona(contato);
