@@ -1,7 +1,5 @@
 angular.module('contatooh', ['ngRoute', 'ngResource'])
 	.config(function($routeProvider) {
-		
-		console.log('router...');
 
 		$routeProvider.when('/contatos', {
 			templateUrl: 'partials/contatos.html',
